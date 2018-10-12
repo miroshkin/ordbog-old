@@ -24,42 +24,31 @@
                 {
                     if (Model.SearchResult.Any())
                     {
+                        foreach (var article in Model.SearchResult)
+                        {
+                            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                                <div class="card-header">@article.Word</div>
+                                <div class="card-body">
+                                    <h5 class="card-title">@article.Transcription</h5>
+                                    <p class="card-text">@article.Translation</p>
+                                </div>
+                            </div>
+                        }
+                    }
+                    else
+                    {
                         <ul class="list-group list-group-flush">
-                            @foreach (var article in Model.SearchResult)
+                            @if (string.IsNullOrEmpty(Model.SearchString))
                             {
-                                <li class="list-group-item">
-                                    @article.Word [@article.Transcription]- @article.Translation
-                                </li>
+                                <li class="list-group-item">Введите строку для поиска</li>
+                            }
+                            else
+                            {
+                                <li class="list-group-item">по запросу "@Model.SearchString" ничего не найдено</li>
                             }
                         </ul>
-
-
-                        foreach (var article in Model.SearchResult)
-                         {
-                             <div class="card bg-light mb-3" style="max-width: 18rem;">
-                                 <div class="card-header">@article.Word</div>
-                                 <div class="card-body">
-                                     <h5 class="card-title">@article.Transcription</h5>
-                                     <p class="card-text">@article.Translation</p>
-                                 </div>
-                             </div>
-                         }
-            
-}
-                else
-                {
-                    <ul class="list-group list-group-flush">
-                        @if (string.IsNullOrEmpty(Model.SearchString))
-                        {
-                            <li class="list-group-item">Введите строку для поиска</li>
-                        }
-                        else
-                        {
-                            <li class="list-group-item">по запросу "@Model.SearchString" ничего не найдено</li>
-                        }
-                    </ul>
+                    }
                 }
-            }
 
             </div>
         </div>
