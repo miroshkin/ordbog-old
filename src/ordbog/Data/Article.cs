@@ -5,14 +5,15 @@ using System.Threading.Tasks;
 
 namespace Ordbog.Data
 {
-    public class Word
+    public class Article
     {
-        public string Name { get; set; }
+        public string Word { get; set; }
+        public string Transcription { get; set; }
         public string Translation { get; set; }
 
-        public Word(string name, string translation)
+        public Article(string word, string translation)
         {
-            Name = name;
+            Word = word;
             Translation = translation;
         }
     }

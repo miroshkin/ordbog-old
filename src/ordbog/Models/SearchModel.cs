@@ -11,6 +11,6 @@ namespace Ordbog.Models
     {
         [Required]
         public string SearchString { get; set; }
-        public IEnumerable<Word> SearchResult { get; internal set; }
+        public IEnumerable<Article> SearchResult { get; internal set; }
     }
 }
