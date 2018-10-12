@@ -1,0 +1,53 @@
+﻿@using Ordbog.Data
+@model SearchModel
+
+@{
+    ViewData["Title"] = "Start page";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="row">
+        <div class="col-md-6">
+            <br />
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    @Html.TextBox("SearchString", null, new { @class = "form-control input-lg" })
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-success btn-lg margin-right">
+                            <span class="glyphicon glyphicon-search"></span> Поиск
+                        </button>
+                    </span>
+                </div>
+                <br />
+                @if (Model != null)
+    {
+        if (Model.SearchResult.Any())
+        {
+            <ul class="list-group list-group-flush">
+                @foreach (var word in Model.SearchResult)
+    {
+            <li class="list-group-item">
+                @word.Name - @word.Translation
+            </li>
+}
+            </ul>
+}
+else
+{
+            <ul class="list-group list-group-flush">
+                @if(string.IsNullOrEmpty(Model.SearchString)){
+                    <li class="list-group-item">Введите строку для поиска</li>
+                }
+                else
+                {
+                    <li class="list-group-item">по запросу "@Model.SearchString" ничего не найдено</li>
+                }
+            </ul>
+}
+}
+
+            </div>
+        </div>
+    </div>
+}
