@@ -12,11 +12,11 @@ using Ordbog.Models;
 
 namespace Ordbog.Controllers
 {
-    public class HomeController : Controller
+    public class DictionaryController : Controller
     {
         private ArticlesRepository _articlesRepository = null;
         private readonly IHostingEnvironment _hostingEnvironment;
-        public HomeController(IHostingEnvironment hostingEnvironment)
+        public DictionaryController(IHostingEnvironment hostingEnvironment)
         {
             _hostingEnvironment = hostingEnvironment;
             string contentRootPath = _hostingEnvironment.ContentRootPath;

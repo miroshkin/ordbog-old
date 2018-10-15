@@ -2,11 +2,25 @@
   {
     "Word": "bog",
     "Transcription": "ˈbɔˀw",
+    "PartOfSpeech": "noun",
     "Translation": "книга"
   },
   {
     "Word": "книга",
     "Transcription": "knʲˈiɡə",
+    "PartOfSpeech": "noun",
     "Translation": "bog"
+  },
+  {
+    "Word": "blå",
+    "Transcription": "ˈblɔˀ",
+    "PartOfSpeech": "adjective",
+    "Translation": "голубой"
+  },
+  {
+    "Word": "голубой",
+    "Transcription": "ɡɐlˈubəj",
+    "PartOfSpeech": "adjective",
+    "Translation": "blå"
   }
 ]

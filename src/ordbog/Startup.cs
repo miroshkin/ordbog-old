@@ -34,7 +34,7 @@ namespace Ordbog
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Dictionary/Error");
             }
 
             app.UseStaticFiles();
@@ -43,7 +43,7 @@ namespace Ordbog
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                    template: "{controller=Dictionary}/{action=Index}/{id?}");
             });
         }
     }
